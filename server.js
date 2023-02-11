@@ -3,7 +3,7 @@ import * as dotenv from 'dotenv'
 import db from './src/database/db.js'
 
 dotenv.config()
-const port = 3001
+const port = 3002
 
 app.listen(port, async () => {
   try {
