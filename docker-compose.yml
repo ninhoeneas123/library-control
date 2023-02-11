@@ -4,7 +4,7 @@ services:
   postgres-db:
     container_name: postgres_container
     image: postgres:latest
-    build: .src/database
+    build: ./src/database
     environment:
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
@@ -18,7 +18,7 @@ services:
   app:
     container_name: library_node
     image: nodejs
-    build: ./library-api
+    build: .
     depends_on:
       - postgres-db
     ports:
