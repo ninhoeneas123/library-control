@@ -28,14 +28,6 @@ jobs:
       - name: install dependencies
         run: npm install
 
-      - name: Start node
-        run:  node server.js
-        env:
-          PORT: ${{ secrets.PORT }}
-          DB_HOST: ${{ secrets.DBHOST }}
-          DB_USER: ${{ secrets.DBUSER }}
-          DB_PASSWORD: ${{ secrets.DBPASSWORD }}
-
       - name: execute integration tests
         run: npm run test
         env:
