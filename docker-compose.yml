@@ -1,0 +1,34 @@
+version: '3.3'
+
+services:
+  postgres-db:
+    container_name: postgres_container
+    image: postgres:latest
+    build: ./database
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - postgres-db:/data/postgres
+    ports:
+      - ${PG_PORT}
+    networks:
+      - dockercompose
+
+  app:
+    container_name: library_node
+    image: nodejs
+    build: ./library-api
+    depends_on:
+      - postgres-db
+    ports:
+      - "3001:3001"
+    networks:
+      - dockercompose
+
+networks:
+  dockercompose:
+
+volumes:
+  postgres-db:
+    driver: local
