@@ -20,6 +20,31 @@ jobs:
           DB_PASSWORD: ${{ secrets.DBPASSWORD }}
           PG_PORT: ${{ secrets.PGPORT }}
 
+      - name: install dependencies
+        run: npm install
+
+      - name: Start node
+        run:  node server.js
+        env:
+          PORT: ${{ secrets.PORT }}
+          DB_HOST: ${{ secrets.DBHOST }}
+          DB_USER: ${{ secrets.DBUSER }}
+          DB_PASSWORD: ${{ secrets.DBPASSWORD }}
+        with:
+          path: ../../library-api
+
+      - name: execute integration tests
+        run: npm run test
+        env:
+          PORT: ${{ secrets.PORT }}
+          DB_HOST: ${{ secrets.DBHOST }}
+          DB_USER: ${{ secrets.DBUSER }}
+          DB_PASSWORD: ${{ secrets.DBPASSWORD }}
+        with:
+          path: ../../library-api
+  
+          
+
       - name: Stop containers
         if: always()
         run: docker-compose rm -f "docker-compose.yml
