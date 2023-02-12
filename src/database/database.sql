@@ -1,3 +1,3 @@
-CREATE DATABASE nodedocker;
+CREATE DATABASE postgresql;
 
-USE nodedocker;
+USE postgresql;

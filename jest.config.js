@@ -1,5 +1,4 @@
 const config = {
-    "name": "library",
     "verbose": true,
     moduleNameMapper: {
         '^image![a-zA-Z0-9$_-]+$': 'GlobalImageStub',
