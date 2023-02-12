@@ -33,6 +33,7 @@ jobs:
         env:
           PORT: ${{ secrets.PORT }}
           DB_HOST: ${{ secrets.DBHOST }}
+          DB_PORT: ${{ secrets.DB_PORT}}
           DB_USER: ${{ secrets.DBUSER }}
           DB_PASSWORD: ${{ secrets.DBPASSWORD }}
 
