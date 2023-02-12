@@ -10,8 +10,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: 
-      image: $ docker run POSTGRES_PASSWORD=banco123 -p 5432:5432 -d postgresql
     steps:
       - uses: actions/checkout@v3
 
