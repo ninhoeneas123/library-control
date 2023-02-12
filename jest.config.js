@@ -1,8 +1,7 @@
 const config = {
     "name": "library",
-    "jest": {
-        "verbose": true
-    },
+    "version": "1.0.0",
+    "verbose": true,
     moduleNameMapper: {
         '^image![a-zA-Z0-9$_-]+$': 'GlobalImageStub',
         '^[./a-zA-Z0-9$_-]+\\.png$': '<rootDir>/RelativeImageStub.js',
