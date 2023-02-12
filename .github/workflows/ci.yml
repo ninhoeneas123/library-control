@@ -10,6 +10,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container: postgres_container
     steps:
       - uses: actions/checkout@v3
 
