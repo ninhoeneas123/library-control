@@ -19,7 +19,7 @@ jobs:
           node-version: "19.x"
 
       - name: Create-DB
-        run: docker-compose up -d
+        run: docker-compose up 
         env:
           DB_USER: ${{ secrets.DBUSER }}
           DB_PASSWORD: ${{ secrets.DBPASSWORD }}
